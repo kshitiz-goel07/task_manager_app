@@ -17,19 +17,15 @@ if(error){
 }
 const db = client.db(databaseName)
 
-// db.collection('users').findOne({name:'Ritik'}, (error, user)=>{
-//            if(error){
-//                return console.log('unable to fetch !')
-//            }
-//            console.log(user)
-
-db.collection('tasks').findOne({_id : new ObjectID("5f4e29610d18bb22ac2c795f") },(error , task)=>{
-console.log(task) 
-})
-
-
-
-db.collection('tasks').find({complete : true}).toArray((error , task)=>{
-console.log(task)
+db.collection('users').updateOne({
+    _id : new ObjectID("5f4e262eeebfd42008c4d8e0")
+},{
+    $set : {
+        name : 'arpit'
+    }
+}).then((result)=>{
+console.log(result)
+}).catch((error)=>{
+console.log(error)
 })
 })
