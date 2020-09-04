@@ -31,14 +31,21 @@ const db = client.db(databaseName)
 // }).catch((error)=>{
 // console.log(error)
 // })
-db.collection('tasks').updateMany({
-    complete : true 
-}, {
-    $set : {
-        complete : false
-    }
+// db.collection('tasks').updateMany({
+//     complete : true 
+// }, {
+//     $set : {
+//         complete : false
+//     }
+// }).then((result)=>{
+//     console.log(result.modifiedCount)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+db.collection('users').deleteMany({
+    age : 22
 }).then((result)=>{
-    console.log(result.modifiedCount)
+    console.log(result)
 }).catch((error)=>{
     console.log(error)
 })
