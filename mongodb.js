@@ -42,11 +42,18 @@ const db = client.db(databaseName)
 // }).catch((error)=>{
 //     console.log(error)
 // })
-db.collection('users').deleteMany({
-    age : 22
+// db.collection('users').deleteMany({
+//     age : 22
+// }).then((result)=>{
+//     console.log(result)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+db.collection('tasks').deleteOne({
+    description : 'Cleaned car'
 }).then((result)=>{
     console.log(result)
-}).catch((error)=>{
-    console.log(error)
+}).catch((e)=>{
+    console.log(e)
 })
 })
