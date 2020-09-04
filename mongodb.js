@@ -49,7 +49,7 @@ const db = client.db(databaseName)
 // }).catch((error)=>{
 //     console.log(error)
 // })
-db.collection('tasks').deleteOne({
+db.collection('tasks').deleteMany({
     description : 'Cleaned car'
 }).then((result)=>{
     console.log(result)
