@@ -22,6 +22,9 @@ db.collection('users').updateOne({
 },{
     $set : {
         name : 'arpit'
+    },
+    $inc : {
+        age : 2
     }
 }).then((result)=>{
 console.log(result)
