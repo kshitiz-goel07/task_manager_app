@@ -17,18 +17,29 @@ if(error){
 }
 const db = client.db(databaseName)
 
-db.collection('users').updateOne({
-    _id : new ObjectID("5f4e262eeebfd42008c4d8e0")
-},{
+// db.collection('users').updateOne({
+//     _id : new ObjectID("5f4e262eeebfd42008c4d8e0")
+// },{
+//     $set : {
+//         name : 'arpit'
+//     },
+//     $inc : {
+//         age : 2
+//     }
+// }).then((result)=>{
+// console.log(result)
+// }).catch((error)=>{
+// console.log(error)
+// })
+db.collection('tasks').updateMany({
+    complete : true 
+}, {
     $set : {
-        name : 'arpit'
-    },
-    $inc : {
-        age : 2
+        complete : false
     }
 }).then((result)=>{
-console.log(result)
+    console.log(result.modifiedCount)
 }).catch((error)=>{
-console.log(error)
+    console.log(error)
 })
 })
